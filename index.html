@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucky Box Game - Win Free Prizes & Gift Cards | Instant Rewards</title>
+    <meta name="description" content="Play our Lucky Box game to win amazing prizes! Click boxes to reveal free gift cards, iPhones, cash rewards & more. Everyone wins guaranteed prizes instantly!">
+    <meta name="keywords" content="lucky box game, win prizes, free gift cards, instant rewards, online game, win iPhone, cash prizes, free rewards, contest, giveaway">
+    <meta name="author" content="Lucky Box Games">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://deal-spoter.github.io/lucky-box-game/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deal-spoter.github.io/lucky-box-game/">
+    <meta property="og:title" content="Lucky Box Game - Win Free Prizes & Gift Cards">
+    <meta property="og:description" content="Play our Lucky Box game to win amazing prizes! Click boxes to reveal free gift cards, iPhones, cash rewards & more.">
+    <meta property="og:image" content="https://www.dropbox.com/scl/fi/btvwf7yhi71if6spd344x/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_2.jpg?rlkey=2v39qqaouq0ytwphqjbzlhzdd&st=912665e7&raw=1">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://deal-spoter.github.io/lucky-box-game/">
+    <meta property="twitter:title" content="Lucky Box Game - Win Free Prizes & Gift Cards">
+    <meta property="twitter:description" content="Play our Lucky Box game to win amazing prizes! Click boxes to reveal free gift cards, iPhones, cash rewards & more.">
+    <meta property="twitter:image" content="https://www.dropbox.com/scl/fi/btvwf7yhi71if6spd344x/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_2.jpg?rlkey=2v39qqaouq0ytwphqjbzlhzdd&st=912665e7&raw=1">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎁</text></svg>">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Game",
+      "name": "Lucky Box Game",
+      "description": "Interactive lucky box game where players win instant prizes",
+      "url": "https://deal-spoter.github.io/lucky-box-game/",
+      "image": "https://www.dropbox.com/scl/fi/btvwf7yhi71if6spd344x/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_2.jpg?rlkey=2v39qqaouq0ytwphqjbzlhzdd&st=912665e7&raw=1",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/OnlineOnly",
+        "description": "Free to play with instant prizes"
+      }
+    }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .header {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+        
+        .logo-text {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #ff9a00, #ffdd00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            min-width: 150px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffdd00;
+        }
+        
+        .jackpot {
+            background: linear-gradient(135deg, #ff9a00 0%, #ffdd00 100%);
+            border-radius: 15px;
+            padding: 20px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(255, 157, 0, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .jackpot::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                rgba(255, 255, 255, 0.1) 10px,
+                rgba(255, 255, 255, 0.1) 20px
+            );
+            animation: shine 3s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes shine {
+            0% {
+                transform: translateX(-100%) translateY(-100%) rotate(0deg);
+            }
+            100% {
+                transform: translateX(100%) translateY(100%) rotate(360deg);
+            }
+        }
+        
+        .jackpot h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #1a1a2e;
+        }
+        
+        .jackpot-amount {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1a1a2e;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .jackpot-text {
+            color: #1a1a2e;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .boxes-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+        
+        .box {
+            aspect-ratio: 1;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .box-1 {
+            background-image: url('https://www.dropbox.com/scl/fi/gefmm4a8nybzaee1sn4xz/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_3.jpg?rlkey=3qr6obxt7kx6js94kctxa2r3i&st=05ugnnan&raw=1');
+        }
+        
+        .box-2 {
+            background-image: url('https://www.dropbox.com/scl/fi/gefmm4a8nybzaee1sn4xz/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_3.jpg?rlkey=3qr6obxt7kx6js94kctxa2r3i&st=05ugnnan&raw=1');
+            filter: hue-rotate(90deg);
+        }
+        
+        .box-3 {
+            background-image: url('https://www.dropbox.com/scl/fi/gefmm4a8nybzaee1sn4xz/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_3.jpg?rlkey=3qr6obxt7kx6js94kctxa2r3i&st=05ugnnan&raw=1');
+            filter: hue-rotate(180deg);
+        }
+        
+        .box-4 {
+            background-image: url('https://www.dropbox.com/scl/fi/gefmm4a8nybzaee1sn4xz/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_3.jpg?rlkey=3qr6obxt7kx6js94kctxa2r3i&st=05ugnnan&raw=1');
+            filter: hue-rotate(270deg);
+        }
+        
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+        
+        .box::before {
+            content: "?";
+            position: absolute;
+            font-size: 4.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        .box.open {
+            transform: scale(0.95);
+        }
+        
+        .box.open::before {
+            content: "";
+        }
+        
+        .rewards {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .rewards h2 {
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: #ffdd00;
+        }
+        
+        .rewards-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .reward-item {
+            background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0, 114, 255, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+        
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffdd00;
+            text-align: center;
+        }
+        
+        .about p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .testimonial {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #ffdd00;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #ffdd00;
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            max-width: 200px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .footer {
+            margin-top: 50px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-link {
+            color: #ffdd00;
+            text-decoration: none;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background-color: #f00;
+            opacity: 0;
+            pointer-events: none;
+            animation: confetti-fall 5s linear infinite;
+            z-index: 100;
+        }
+        
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+        
+        .popup-ad {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            color: #333;
+            text-align: center;
+            display: none;
+            max-width: 90%;
+            width: 400px;
+        }
+        
+        .popup-ad h3 {
+            margin-bottom: 15px;
+            color: #0072ff;
+        }
+        
+        .popup-ad-close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 999;
+            display: none;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.2;
+        }
+        
+        .pattern-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.1;
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 3rem;
+            }
+            
+            .jackpot-amount {
+                font-size: 2.5rem;
+            }
+            
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-text {
+                font-size: 2.5rem;
+            }
+            
+            .jackpot-amount {
+                font-size: 2rem;
+            }
+            
+            .box {
+                font-size: 2.2rem;
+            }
+            
+            .box::before {
+                font-size: 3.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        /* SEO Content Styling */
+        .seo-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: left;
+        }
+        
+        .seo-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #ffdd00;
+            text-align: center;
+        }
+        
+        .seo-content h3 {
+            font-size: 1.5rem;
+            margin: 20px 0 10px;
+            color: #ffdd00;
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #ffdd00;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://www.dropbox.com/scl/fi/c3xc71f49nf90u85yo22o/Leonardo_Kino_XL_Subtle_geometric_pattern_in_dark_blue_with_go_3.jpg?rlkey=pm883rtbmz2q657g7cbw0etse&st=at2f33r5&raw=1" alt="Background Pattern" class="pattern-bg">
+    <img src="https://www.dropbox.com/scl/fi/dkr2whtevtz706svmouo7/Leonardo_Kino_XL_Abstract_colorful_background_with_confetti_go_3.jpg?rlkey=vuz4oaaw990s1oj09il1qyc9t&st=6v595h9u&raw=1" alt="Hero Background" class="hero-bg">
+    
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://www.dropbox.com/scl/fi/btvwf7yhi71if6spd344x/Leonardo_Kino_XL_Modern_lottery_game_logo_with_a_gift_box_icon_2.jpg?rlkey=2v39qqaouq0ytwphqjbzlhzdd&st=912665e7&raw=1" alt="Lucky Box Logo - Win Free Prizes and Gift Cards" class="logo-img">
+                <h1 class="logo-text">LUCKY BOX</h1>
+            </div>
+            <div class="tagline">Unlock boxes to win amazing prizes! Everyone's a winner!</div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">542,891</div>
+                    <div>Players Today</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$2,384,921</div>
+                    <div>Prizes Won</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98.7%</div>
+                    <div>Win Rate</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="jackpot">
+            <h2>Next Jackpot</h2>
+            <div class="jackpot-amount">$10,000</div>
+            <div class="jackpot-text">is a guaranteed reward!</div>
+        </div>
+        
+        <div class="boxes-container">
+            <div class="box box-1" data-reward="6" aria-label="Lucky Box 1 with potential prize"></div>
+            <div class="box box-2" data-reward="7" aria-label="Lucky Box 2 with potential prize"></div>
+            <div class="box box-3" data-reward="8" aria-label="Lucky Box 3 with potential prize"></div>
+            <div class="box box-4" data-reward="9" aria-label="Lucky Box 4 with potential prize"></div>
+        </div>
+        
+        <div class="trust-badges">
+            <img src="https://www.dropbox.com/scl/fi/midzfichrv9642i669nz6/Leonardo_Kino_XL_Trust_badge_with_Verified_Winner_Secure_Payme_2.jpg?rlkey=wggp405byu59jkdq0f8uv9orz&st=pb6d7c7t&raw=1" alt="Trust Badges - Verified Winner, Secure Payment, 24/7 Support" class="trust-badge">
+        </div>
+        
+        <div class="rewards">
+            <h2>Rewards</h2>
+            <div class="rewards-list">
+                <div class="reward-item">$5 Amazon Gift Card</div>
+                <div class="reward-item">iPhone 14 Pro</div>
+                <div class="reward-item">Samsung 4K TV</div>
+                <div class="reward-item">PlayStation 5</div>
+                <div class="reward-item">MacBook Pro</div>
+                <div class="reward-item">$10,000 Cash</div>
+                <div class="reward-item">Nintendo Switch</div>
+                <div class="reward-item">DJI Drone</div>
+                <div class="reward-item">AirPods Pro</div>
+                <div class="reward-item">Smart Watch</div>
+                <div class="reward-item">$100 Starbucks Card</div>
+                <div class="reward-item">Luxury Vacation</div>
+            </div>
+        </div>
+        
+        <!-- SEO Content Section -->
+        <div class="seo-content">
+            <h2>Lucky Box Game - Your Chance to Win Amazing Prizes</h2>
+            <p>Welcome to the most exciting lucky box game online! Our interactive game gives you the opportunity to win incredible prizes just by clicking on one of our colorful lucky boxes. Whether you're looking to win gift cards, electronics, or even cash prizes, our game offers something for everyone.</p>
+            
+            <h3>How to Play Our Lucky Box Game</h3>
+            <p>Playing our lucky box game is simple and fun. Just click on any of the four colorful boxes to reveal your prize. Each box contains a guaranteed reward, with no empty boxes. Our game is designed to be accessible to everyone, with no purchase necessary to participate.</p>
+            
+            <h3>Why Play Our Lucky Box Game?</h3>
+            <p>Unlike other online games, our lucky box game offers instant rewards with no complicated rules. We've partnered with leading brands to bring you genuine prizes that you can actually use. Our transparent system ensures that every player has a equal chance to win exciting rewards.</p>
+            
+            <h3>Frequently Asked Questions</h3>
+            <div class="faq-item">
+                <div class="faq-question">How do I claim my prize?</div>
+                <p>After clicking a box and revealing your prize, you'll be redirected to our verification process. Simply follow the instructions to claim your reward.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is this game really free?</div>
+                <p>Yes! Our lucky box game is completely free to play. There are no hidden fees or charges to participate.</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How often can I play?</div>
+                <p>You can play our lucky box game once per day. Come back daily for more chances to win amazing prizes!</p>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Are the prizes really available?</div>
+                <p>Absolutely! We work with reputable sponsors to ensure all prizes are genuine and available to our winners.</p>
+            </div>
+        </div>
+        
+        <div class="about">
+            <h2>Why We're Running This Contest</h2>
+            <p>At Lucky Box, we believe in spreading joy and rewarding our community. As part of our 10th anniversary celebration, we're giving away over $2 million in prizes to lucky winners around the world!</p>
+            <p>Our sponsors make this possible by supporting our platform and offering incredible products and services. By participating, you help us continue this tradition of generosity while getting a chance to win amazing prizes.</p>
+            <p>Every box contains a reward - no empty boxes! Simply click on any box to reveal your prize and claim it through our verification process.</p>
+            
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="https://www.dropbox.com/scl/fi/s2lgqdqjb5hpwxf2q3rz4/Leonardo_Kino_XL_Friendly_man_face_professional_photo_smiling_3.jpg?rlkey=qiukggu548s1okpaqayf1do0m&st=kzh6g5xf&raw=1" alt="Mike from Texas won a PlayStation 5" class="testimonial-avatar">
+                        <div class="testimonial-author">- Mike, Texas</div>
+                    </div>
+                    <div class="testimonial-text">"I've won twice now! First a $50 gift card, and just last week I won the PlayStation 5. This site is absolutely amazing!"</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="https://www.dropbox.com/scl/fi/td0ms071ruy9wcoopoky9/Leonardo_Kino_XL_Friendly_woman_face_professional_photo_smilin_0.jpg?rlkey=ghux77olrei49gfs8vox3cm7t&st=6w0702k0&raw=1" alt="Sarah from New York won an iPhone" class="testimonial-avatar">
+                        <div class="testimonial-author">- Sarah, New York</div>
+                    </div>
+                    <div class="testimonial-text">"I couldn't believe it when I won the iPhone! The process was so easy and my prize arrived within 3 days. This is the real deal!"</div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <img src="https://www.dropbox.com/scl/fi/0o2bbmwka5425cnhl8opc/Leonardo_Kino_XL_Friendly_woman_face_professional_photo_smilin_2.jpg?rlkey=2xjmm93pyqy410ucia4scklj9&st=srfvpd7f&raw=1" alt="Jennifer from California won a Samsung TV" class="testimonial-avatar">
+                        <div class="testimonial-author">- Jennifer, California</div>
+                    </div>
+                    <div class="testimonial-text">"I was skeptical at first, but I decided to try and won a Samsung TV. This is 100% legitimate! Thank you Lucky Box!"</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-links">
+                <a href="#" class="footer-link">Terms of Service</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Contact Us</a>
+                <a href="#" class="footer-link">FAQ</a>
+            </div>
+            <p>© 2023 Lucky Box. All rights reserved. Lucky Box is not affiliated with any brands mentioned. Prizes are sponsored by our partners.</p>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="popup-ad" id="popupAd">
+        <div class="popup-ad-close" id="closePopup"><i class="fas fa-times"></i></div>
+        <h3>Special Offer Just For You!</h3>
+        <p>Claim your exclusive discount from our sponsor before it's gone!</p>
+        <div style="margin: 20px 0;">
+            <img src="https://via.placeholder.com/300x200?text=Special+Offer" alt="Special Offer - Limited Time Discount" style="width: 100%; border-radius: 10px;">
+        </div>
+        <button style="background: #0072ff; color: white; border: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; margin-bottom: 15px;">
+            Claim Your Discount Now!
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const boxes = document.querySelectorAll('.box');
+            const overlay = document.getElementById('overlay');
+            const popupAd = document.getElementById('popupAd');
+            const closePopup = document.getElementById('closePopup');
+            const cpaLink = 'https://quartzfiles.com/1679319';
+            
+            // Show popup ad after 5 seconds
+            setTimeout(showPopupAd, 5000);
+            
+            // Close popup functionality
+            closePopup.addEventListener('click', hidePopupAd);
+            overlay.addEventListener('click', hidePopupAd);
+            
+            boxes.forEach((box, index) => {
+                box.addEventListener('click', function() {
+                    // Show reward
+                    this.classList.add('open');
+                    this.textContent = this.getAttribute('data-reward');
+                    
+                    // Create confetti effect
+                    createConfetti();
+                    
+                    // Redirect to CPA link after a delay
+                    setTimeout(() => {
+                        window.location.href = cpaLink;
+                    }, 2000);
+                });
+            });
+            
+            function showPopupAd() {
+                overlay.style.display = 'block';
+                popupAd.style.display = 'block';
+            }
+            
+            function hidePopupAd() {
+                overlay.style.display = 'none';
+                popupAd.style.display = 'none';
+            }
+            
+            function createConfetti() {
+                const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+                
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.width = (5 + Math.random() * 10) + 'px';
+                    confetti.style.height = (5 + Math.random() * 10) + 'px';
+                    confetti.style.animationDuration = (2 + Math.random() * 3) + 's';
+                    document.body.appendChild(confetti);
+                    
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }
+            }
+        });
+    </script>
+    
+    <!-- Ad Script -->
+    <script type="text/javascript" src="//data185.click/bbc651ae0e064bdf4f3c/3d88fabb16/?placementName=default"></script>
+</body>
+</html>
