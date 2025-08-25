@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+
+Sitemap: https://deal-spoter.github.io/lucky-box-game/sitemap.xml
